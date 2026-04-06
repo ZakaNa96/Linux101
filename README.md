@@ -8,7 +8,7 @@ Welcome to Linux 101! This course is designed for apprentices (Azubis) who are s
 |---|---|
 | **Target Audience** | System Administration apprentices with no Linux experience |
 | **Prerequisites** | Basic computer knowledge, Kali Linux installed in VirtualBox |
-| **Total Duration** | Approximately 40-50 hours |
+| **Total Duration** | Approximately 48-60 hours |
 | **Format** | Self-paced with hands-on exercises |
 | **Language** | English (German-friendly) |
 
@@ -44,6 +44,10 @@ You will use **Kali Linux** running in a **VirtualBox** virtual machine. This se
 │  Module 9: Basic Networking                                         │
 │      ↓                                                              │
 │  Module 10: Shell Scripting and System Administration               │
+│      ↓                                                              │
+│  Module 11: System Monitoring and Log Analysis                      │
+│      ↓                                                              │
+│  Module 12: Backup, Recovery, and Basic Hardening                  │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -699,6 +703,102 @@ By the end of this module, you will be able to:
 
 ---
 
+
+### Module 11: System Monitoring and Log Analysis
+
+> **Observability, troubleshooting, and incident investigation**
+
+| | |
+|---|---|
+| **Duration** | 4-6 hours |
+| **Prerequisites** | Modules 1-10 completed |
+| **Difficulty** | ⭐⭐⭐ Intermediate |
+
+#### Learning Objectives
+
+By the end of this module, you will be able to:
+- Monitor system health in real time using CLI tools
+- Investigate service issues with `journalctl` and `/var/log`
+- Identify high resource usage and bottlenecks
+- Follow a repeatable troubleshooting workflow
+- Produce short incident reports with technical evidence
+
+#### Key Concepts
+
+1. **Live Monitoring**
+   - `top` / `htop`
+   - `free`, `vmstat`, `iostat`
+   - `df` and `du` for storage visibility
+
+2. **Service and Process Diagnostics**
+   - `systemctl status`
+   - `ps aux --sort` and process inspection
+   - Failed services and restart analysis
+
+3. **Log Analysis**
+   - `/var/log` essentials
+   - `journalctl` filtering by service/time/severity
+   - Error pattern hunting with `grep`
+
+4. **Network-State Verification**
+   - `ip a`, `ip route`, `ss -tulpen`
+   - Basic connectivity and DNS checks
+
+5. **Operational Workflow**
+   - Symptom confirmation
+   - Evidence collection
+   - Root-cause hypothesis and validation
+
+---
+
+### Module 12: Backup, Recovery, and Basic Hardening
+
+> **Protecting systems and restoring operations with confidence**
+
+| | |
+|---|---|
+| **Duration** | 4-6 hours |
+| **Prerequisites** | Modules 1-11 completed |
+| **Difficulty** | ⭐⭐⭐⭐ Intermediate-Advanced |
+
+#### Learning Objectives
+
+By the end of this module, you will be able to:
+- Build a practical backup strategy for Linux hosts
+- Automate backups with scripts and cron
+- Verify backups and run restore drills
+- Apply basic hardening controls for Linux systems
+- Write a recovery runbook for common incidents
+
+#### Key Concepts
+
+1. **Backup Strategy**
+   - 3-2-1 backup principle
+   - What to include/exclude
+   - Retention and storage planning
+
+2. **Backup Tooling**
+   - `tar` archives
+   - `rsync` synchronization
+   - Checksums (`sha256sum`) for integrity
+
+3. **Restore and Validation**
+   - Test restore to safe directories
+   - Compare restored content
+   - Recovery time estimation
+
+4. **Security Baseline Hardening**
+   - SSH best practices
+   - least privilege (`sudo`, users/groups)
+   - open-port review and update hygiene
+
+5. **Recovery Operations**
+   - Incident runbooks
+   - Verification checklist
+   - Escalation paths and documentation
+
+---
+
 ## Folder Structure for Course Materials
 
 ```
@@ -763,7 +863,19 @@ Linux101/
 │   │   ├── quiz.md
 │   │   └── resources/
 │   │
-│   └── 10-scripting-administration/
+│   ├── 10-scripting-administration/
+│   │   ├── lesson.md
+│   │   ├── exercises.md
+│   │   ├── quiz.md
+│   │   └── resources/
+│   │
+│   ├── 11-system-monitoring-logging/
+│   │   ├── lesson.md
+│   │   ├── exercises.md
+│   │   ├── quiz.md
+│   │   └── resources/
+│   │
+│   └── 12-backup-recovery-hardening/
 │       ├── lesson.md
 │       ├── exercises.md
 │       ├── quiz.md
@@ -795,7 +907,7 @@ Linux101/
 ## Learning Path Recommendations
 
 ### For Fastest Progress:
-1. Complete modules in order (1 → 10)
+1. Complete modules in order (1 → 12)
 2. Do all exercises before moving to the next module
 3. Keep a learning journal with notes and questions
 4. Practice commands daily, even just for 15 minutes
@@ -805,6 +917,8 @@ Linux101/
 - After Module 6: Practice user/permission combinations
 - After Module 8: Spend time monitoring your system
 - After Module 10: Create your own scripts for daily tasks
+- After Module 11: Build and use a daily monitoring checklist
+- After Module 12: Run monthly backup-restore drills
 
 ### Weekly Schedule Suggestion:
 - **Week 1:** Modules 1-2 (Terminal basics and navigation)
@@ -812,7 +926,8 @@ Linux101/
 - **Week 3:** Modules 5-6 (Permissions and users)
 - **Week 4:** Modules 7-8 (Packages and processes)
 - **Week 5:** Modules 9-10 (Networking and scripting)
-- **Week 6:** Review, practice, and final project
+- **Week 6:** Modules 11-12 (Monitoring, backup, and hardening)
+- **Week 7:** Review, practice, and final project
 
 ---
 
